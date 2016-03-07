@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.bistri.cordova.bistriapi" version="0.0">
+    <name>Bistri JS Api</name>
+    <description>Add Bistri JS Api to your Cordova app</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,bistri</keywords>
+    <js-module src="www/bistri-js-api.js" name="bistri-js-api">
+        <clobbers target="bistri-js-api" />
+    </js-module>
+    <platform name="ios">
+        <config-file target="*-Info.plist" parent="CFBundleURLTypes">
+        </config-file>
+    </platform>
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+            <uses-permission android:name="android.permission.RECORD_AUDIO" />
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-feature android:name="android.hardware.camera" />
+            <uses-feature android:name="android.hardware.camera.autofocus" />
+        </config-file>
+    </platform>
+</plugin>
