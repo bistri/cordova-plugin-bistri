@@ -5,6 +5,7 @@
     <license>Apache 2.0</license>
     <keywords>cordova,bistri</keywords>
     <js-module src="www/bistri-js-api.js" name="BistriJSApi">
+        <clobbers target="bc" />
     </js-module>
     <platform name="ios">
         <config-file target="*-Info.plist" parent="CFBundleURLTypes">
