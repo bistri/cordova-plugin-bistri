@@ -1,6 +1,5 @@
 ( function ()
 {
-
     function LazyJSLoader ( source, callback )
     {
         this._loaded   = 0,
