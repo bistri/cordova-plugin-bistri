@@ -4,7 +4,8 @@
     <description>Add Bistri JS Api to your Cordova app</description>
     <license>Apache 2.0</license>
     <keywords>cordova,bistri</keywords>
-    <asset src="www/bistri-js-api.js" target="js/bistri-js-api.js" />
+    <js-module src="www/bistri-js-api.js" name="BistriJSApi">
+    </js-module>
     <platform name="ios">
         <config-file target="*-Info.plist" parent="CFBundleURLTypes">
         </config-file>

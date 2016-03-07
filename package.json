@@ -3,7 +3,7 @@
     "version": "0.0",
     "description": "Cordova Bistri Plugin",
     "cordova": {
-        "id": "cordova-plugin-device",
+        "id": "cordova-plugin-bistri",
         "platforms": [
             "firefoxos",
             "tizen",
