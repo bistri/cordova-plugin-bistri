@@ -6,7 +6,7 @@ var bistriJsApi = {
 function LazyJSLoader ( source, callback )
 {
     this._loaded   = 0,
-    this._source  = source instanceof Array ? source : [ source ],
+    this._source   = source instanceof Array ? source : [ source ],
     this._callback = callback;
     this._load ();
 };
@@ -35,6 +35,16 @@ LazyJSLoader.prototype._load = function ()
 
 /************************************************************/
 
+function triggerBistriEvent ( name )
+{
+    var apiReadyEvent = document.createEvent ( 'CustomEvent' );
+
+    apiReadyEvent.initCustomEvent ( name, true, false, 'cordova-plugin-bistri event' )
+    document.dispatchEvent( apiReadyEvent );
+}
+
+/************************************************************/
+
 window.onBistriConferenceReady = function ()
 {
     if ( !bistriJsApi.isReady )
@@ -44,6 +54,8 @@ window.onBistriConferenceReady = function ()
         {
             bistriJsApi.callback ( window.bc );
         }
+
+        triggerBistriEvent ( 'onBistriJsApiReady' );
     }
 };
 
