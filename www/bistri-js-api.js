@@ -1,6 +1,6 @@
 var bistriJsApi = {
-    isReady  : false,
-    callback : function (){}
+    isReady   : false,
+    callbacks : []
 };
 
 function LazyJSLoader ( source, callback )
@@ -50,10 +50,11 @@ window.onBistriConferenceReady = function ()
     if ( !bistriJsApi.isReady )
     {
         bistriJsApi.isReady = true;
-        if ( typeof bistriJsApi.callback === 'function' )
+
+        bistriJsApi.callbacks.forEach ( function ( fn )
         {
-            bistriJsApi.callback ( window.bc );
-        }
+            fn ( bc );
+        } );
 
         triggerBistriEvent ( 'onBistriJsApiReady' );
     }
@@ -61,10 +62,15 @@ window.onBistriConferenceReady = function ()
 
 /************************************************************/
 
-new LazyJSLoader ( 'https://api.bistri.com/bistri.conference.min.js', function ()
+document.onreadystatechange = function ()
 {
-    console.log ( "bistri.conference.min.js loaded" );
-} );
+    if ( document.readyState == "complete" )
+    {
+        new LazyJSLoader ( 'https://api.bistri.com/bistri.conference.min.js', function (){
+            triggerBistriEvent ( 'onBistriJsApiLoaded' );
+        } );
+    }
+}
 
 module.exports = {
 
@@ -78,7 +84,7 @@ module.exports = {
             }
             else
             {
-                bistriJsApi.callback = fn;
+                bistriJsApi.callbacks.push ( fn );
 
                 if ( typeof window.bc != 'undefined' )
                 {

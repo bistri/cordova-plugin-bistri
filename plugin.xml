@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-bistri" version="0.0">
-    <name>Bistri JS Api</name>
-    <description>Add Bistri JS Api to your Cordova app</description>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-bistri" version="1.0">
+    <name>Bistri WebRTC JS Api</name>
+    <description>Add Bistri WebRTC JS Api to your Cordova app. crosswalk-project-webview is used as a dependency to provide WebRTC support</description>
     <license>Apache 2.0</license>
     <keywords>cordova,bistri</keywords>
     <js-module src="www/bistri-js-api.js" name="BistriJSApi">
@@ -20,4 +20,5 @@
             <uses-feature android:name="android.hardware.camera.autofocus" />
         </config-file>
     </platform>
+    <dependency id="cordova-plugin-crosswalk-webview" url="https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview" commit="1.5.0" />
 </plugin>
