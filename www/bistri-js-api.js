@@ -62,13 +62,25 @@ window.onBistriConferenceReady = function ()
 
 /************************************************************/
 
-document.onreadystatechange = function ()
+function loadBistriJsApi ()
 {
-    if ( document.readyState == "complete" )
+    new LazyJSLoader ( 'https://api.bistri.com/bistri.conference.min.js', function (){
+        triggerBistriEvent ( 'onBistriJsApiLoaded' );
+    } );
+}
+
+if ( document.readyState == "complete" )
+{
+    loadBistriJsApi ();
+}
+else
+{
+    document.onreadystatechange = function ()
     {
-        new LazyJSLoader ( 'https://api.bistri.com/bistri.conference.min.js', function (){
-            triggerBistriEvent ( 'onBistriJsApiLoaded' );
-        } );
+        if ( document.readyState == "complete" )
+        {
+            loadBistriJsApi ();
+        }
     }
 }
 
