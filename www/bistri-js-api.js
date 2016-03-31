@@ -64,7 +64,7 @@ window.onBistriConferenceReady = function ()
 
 document.addEventListener ( 'deviceReady', function ()
 {
-    new LazyJSLoader ( 'http://10.0.1.112:8081/bistri.conference.min.js', function ()
+    new LazyJSLoader ( 'http://api.bistri.com/bistri.conference.min.js', function ()
     {
         triggerBistriEvent ( 'onBistriJsApiLoaded' );
     } );
