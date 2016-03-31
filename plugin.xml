@@ -21,4 +21,5 @@
         </config-file>
     </platform>
     <dependency id="cordova-plugin-crosswalk-webview" url="https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview" commit="1.5.0" />
+    <dependency id="cordova-plugin-iosrtc" url="https://github.com/eface2face/cordova-plugin-iosrtc" commit="2.2.3" />
 </plugin>

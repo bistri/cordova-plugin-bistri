@@ -62,27 +62,13 @@ window.onBistriConferenceReady = function ()
 
 /************************************************************/
 
-function loadBistriJsApi ()
+document.addEventListener ( 'deviceReady', function ()
 {
-    new LazyJSLoader ( 'https://api.bistri.com/bistri.conference.min.js', function (){
+    new LazyJSLoader ( 'http://10.0.1.112:8081/bistri.conference.min.js', function ()
+    {
         triggerBistriEvent ( 'onBistriJsApiLoaded' );
     } );
-}
-
-if ( document.readyState == "complete" )
-{
-    loadBistriJsApi ();
-}
-else
-{
-    document.onreadystatechange = function ()
-    {
-        if ( document.readyState == "complete" )
-        {
-            loadBistriJsApi ();
-        }
-    }
-}
+} );
 
 module.exports = {
 
