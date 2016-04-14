@@ -1,2 +1,2 @@
 # cordova-plugin-bistri
-Cordova iOS plugin for Bistri
+Cordova Android/iOS plugin for Bistri
