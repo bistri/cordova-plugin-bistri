@@ -1,6 +1,7 @@
 ### cordova-plugin-bistri
 
-Cordova Android/iOS plugin for Bistri
+Use Bistri WebRTC JS library in your hybrid applications.
+This plugin is Android / iOS compatible.
 
 ### Install
 
