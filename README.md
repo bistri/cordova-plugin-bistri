@@ -20,7 +20,7 @@ To bring WebRTC support to webviews cordova-plugin-bistri use:
 
 * Xcode >= 7.2.1
 * iOS >= 9 (run on lower versions at your own risk, but don't open issues)
-* cordova-ios 4.X
+* cordova-ios 3.9.2
 * No bitcode (built-in libwebrtc does not contain bitcode so you need to disable it in your Xcode project settings)
 
 ### Build cordova-plugin-iosrtc plugin
