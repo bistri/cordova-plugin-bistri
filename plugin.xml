@@ -20,6 +20,6 @@
             <uses-feature android:name="android.hardware.camera.autofocus" />
         </config-file>
     </platform>
-    <dependency id="cordova-plugin-crosswalk-webview" url="https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview" commit="1.5.0" />
-    <dependency id="cordova-plugin-iosrtc" url="https://github.com/eface2face/cordova-plugin-iosrtc" commit="2.2.3" />
+    <dependency id="cordova-plugin-crosswalk-webview" url="https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview" commit="2.0.0" />
+    <dependency id="cordova-plugin-iosrtc" url="https://github.com/eface2face/cordova-plugin-iosrtc" commit="3.1.0" />
 </plugin>
