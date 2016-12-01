@@ -1,4 +1,5 @@
 var bistriJsApi = {
+    isLoaded  : false,
     isReady   : false,
     callbacks : []
 };
@@ -62,12 +63,27 @@ window.onBistriConferenceReady = function ()
 
 /************************************************************/
 
-document.addEventListener ( 'deviceReady', function ()
+function lazyLoad ()
 {
-    new LazyJSLoader ( 'https://api.bistri.com/bistri.conference.min.js', function ()
+    if ( !bistriJsApi.isLoaded )
     {
-        triggerBistriEvent ( 'onBistriJsApiLoaded' );
-    } );
+        console.log ( "-------------> LazyJSLoader" )
+
+        new LazyJSLoader ( 'https://api.bistri.com/bistri.conference.min.js', function ()
+        {
+            bistriJsApi.isLoaded = true;
+
+            console.log ( "-------------> onBistriJsApiLoaded" )
+
+            triggerBistriEvent ( 'onBistriJsApiLoaded' );
+        } );
+    }
+};
+
+document.addEventListener ( 'online', lazyLoad, false );
+document.addEventListener ( 'deviceReady', function ()
+{ 
+    lazyLoad ();
 } );
 
 module.exports = {
