@@ -67,14 +67,9 @@ function lazyLoad ()
 {
     if ( !bistriJsApi.isLoaded )
     {
-        console.log ( "-------------> LazyJSLoader" )
-
         new LazyJSLoader ( 'https://api.bistri.com/bistri.conference.min.js', function ()
         {
             bistriJsApi.isLoaded = true;
-
-            console.log ( "-------------> onBistriJsApiLoaded" )
-
             triggerBistriEvent ( 'onBistriJsApiLoaded' );
         } );
     }
