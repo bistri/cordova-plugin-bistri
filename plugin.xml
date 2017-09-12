@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-bistri" version="1.4">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-bistri" version="1.5">
     <name>Bistri WebRTC JS Api</name>
     <description>Add Bistri WebRTC JS Api to your Cordova app. crosswalk-project-webview is used as a dependency to provide WebRTC support</description>
     <license>Apache 2.0</license>
